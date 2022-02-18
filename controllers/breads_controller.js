@@ -2,8 +2,12 @@ const express = require('express')
 const breads = express.Router()
 const Bread = require('../models/breads.js')
 // index
-breads.get('/', (req, res) =>{
-    res.send(Bread)
+breads.get('/', (req, res) => {
+    res.render('index',
+    {
+        breads: Bread
+    })
+  // res.send(Bread)
 })
 // show
 breads.get('/:arrayIndex', (req,res)=>{
